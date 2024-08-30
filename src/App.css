@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9), rgba(170, 60, 255, 0.462));
+  background-attachment: fixed; /* Make the background fixed */
+  background-size: cover; /* Ensure the background covers the entire area */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Main Container */
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  flex: 1; /* Allows the root to take full available space */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Navbar Container */
+.navbar-container {
+  display: flex;
+  justify-content: center; /* Center the navbar horizontally */
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Dark grey background with 0.7 opacity */
+  position: fixed; /* Ensure the navbar is fixed at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it sits on top of other elements */
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+  display: flex; /* Flex layout for better alignment control */
+  justify-content: center; /* Center the nav items */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  /* background: rgba(0, 0, 0, 0.7); Dark grey background with 0.7 opacity */
+  border-radius: 8px; /* Slightly smaller border-radius */
+  padding: 10px 20px; /* Adjusted padding for better spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Slightly smaller shadow */
+  margin: 30px auto; /* Center the navbar horizontally */
+  position: relative; /* Allows for logo positioning */
+}
+
+/* Logo Container */
+.logo-container {
+  position: absolute;
+  left: 30px; /* Shift the logo to the left */
+  top: 70%;
+  transform: translateY(-50%);
+}
+
+/* Logo Image */
+.logo-image, .mobile-logo {
+  height: 180px; /* Adjusted logo height */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Navigation Menu Container */
+.navbar-nav-container {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center nav items */
+}
+
+/* Navigation Items Background */
+.nav-items-container {
+  background-color: rgba(61, 60, 60, 0.3); /* Dark grey background with 0.3 opacity */
+  border-radius: 20px; /* Slightly smaller border-radius */
+  padding: 8px 12px; /* Adjusted padding */
+  display: flex; /* Ensure the items are horizontally aligned */
+}
+
+/* Navbar Menu (desktop) */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+}
+
+.navbar-menu li {
+  margin: 0 8px; /* Reduced space between nav items */
+  cursor: pointer;
+  font-size: 0.85rem; /* Slightly smaller font size */
+  color: #fff; /* White text color */
+  transition: color 0.3s ease;
+}
+
+.navbar-menu li:hover {
+  color: #9d82ff; /* Hover color */
+}
+
+/* Social Icons (hidden in this version) */
+.social-icons {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-icons li {
+  margin: 0 10px; /* Increased space between social icons */
+}
+
+.social-icons a {
+  color: aliceblue;
+}
+
+/* Mobile Navigation Icon */
+.mobile-nav-toggle {
+  display: none; /* Initially hidden */
+}
+
+/* Mobile Navigation Menu */
+.mobile-navigation-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000; /* Background color */
+  border-right: 1px solid #333; /* Border color */
+  transition: transform 0.3s ease;
+}
+
+.mobile-navigation-menu.open {
+  transform: translateX(0); /* Open menu */
+}
+
+.mobile-navigation-menu {
+  transform: translateX(-100%); /* Hide menu */
+}
+
+/* Mobile Navigation Items */
+.mobile-navigation-menu li {
+  padding: 1rem;
+  font-size: 1rem; /* Font size for mobile items */
+  cursor: pointer;
+  border-bottom: 1px solid #333; /* Border between items */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mobile-navigation-menu li:hover {
+  background-color: #c5973c; /* Background color on hover */
+  color: black; /* Text color on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none; /* Hide the desktop nav menu */
+  }
+
+  .social-icons {
+    display: none; /* Hide the desktop social icons */
+  }
+
+  .mobile-nav-toggle {
+    display: block; /* Show mobile nav toggle */
+  }
+
+  .navbar-nav-container {
+    margin-left: 0;
+  }
+}
+
+/* Hero Section */
+.hero-background {
+  margin-top: 30px;
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9), rgba(170, 60, 255, 0.462)); */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  box-sizing: border-box;
+}
+
+/* Hero Content */
+.hero-content {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for better readability */
+  padding: 2rem; /* Adjust padding as needed */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  max-width: 70%; /* Ensure content does not exceed 70% of the viewport width */
+  margin: 0 auto; /* Center the content horizontally */
+}
+
+.hero-content button {
+  display: inline-flex; /* Ensure button takes only the space it needs */
+  margin: 0 auto; /* Center button horizontally within its container */
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between; /* Space between each card */
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6); /* Match Hero component background */
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  margin: 2rem auto; /* Center container */
+}
+
+.card {
+  background: rgba(61, 60, 60, 0.3); /* Semi-transparent background for cards */
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 30%; /* Make sure each card takes up 30% of the container width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add some shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add some animation */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Slightly lift the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
+}
